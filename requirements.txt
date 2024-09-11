@@ -2,3 +2,4 @@ Flask==2.3.2
 Flask-Bootstrap==3.3.7.1
 qrcode==7.3
 Pillow==10.0.0  # Required by qrcode for image generation
+gunicorn==22.0.0
