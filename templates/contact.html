@@ -1,0 +1,39 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {background-color: #48CFCB; margin: 0; padding: 0;}
+        .main-body {text-align: center; font-size: 24px;}
+        .main-body a {text-decoration: none; color: #F5F5F5; padding: 8px; text-align: center; transition-duration: .6s; border-radius: 8px;}
+        .main-body a:hover {background-color: #F5F5F5; color: #48CFCB;}
+        .main-body__item {display: inline; text-decoration: none;}
+        .main-body div a {margin: 0 5px; padding: 4px;}
+        .main-body__mail_container a {margin: 0 5px;}
+    </style>
+</head>
+<body>
+    <main class="main-body">
+        <div class="main-body__mail_container">
+            <a href="mailto: salihalpercetin@gmail.com" class="main-body__send">Bize Mail Gönderin: </a>
+            <a href="mailto: salihalpercetin@gmail.com" class="main-body__mail"><i class="fa fa-envelope"></i> salihalpercetin@gmail.com</a>
+        </div>
+        <div class="main-body__linkedin_container">
+            <a href="https://www.linkedin.com/in/salih-alper-çetin-ab833728b/" target="_blank" class="main-body__item linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        </div>
+        
+        <div class="main-body__github_container">
+            <a href="https://github.com/salihalperc" target="_blank" class="main-body__item github"><i class="fa fa-github"></i> Github</a>
+        </div>
+        
+    </main>
+</body>
+</html>
+
+{% endblock %}

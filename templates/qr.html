@@ -1,0 +1,46 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {width: 100%;}
+        .main-body__title {color: #F5F5F5; text-align: center; display: block; font-size: 20px; margin: 10px 0;}
+        .main-body__form {text-align: center; margin: 10px 0;}
+        .main-body__form_input {width: 50%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+        .main-body__form_submit {box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; background-color: #424242; color: #F5F5F5; border-radius: 8px; padding: 0 8px; transition-duration: .6s;}
+        .main-body__form_submit:hover {background-color: #F5F5F5; color: #424242;}
+        .main-body__qr {text-align: center;}
+        .qr-img {width: 164px;}
+        .qr-btn {background-color: #424242; text-decoration: none; font-size: 16px; color: #F5F5F5; padding: 8px; margin: 10px 0; border-radius: 8px; transition-duration: .6s;}
+        .qr-btn:hover {background-color: #F5F5F5; color: #424242;}
+
+    </style>
+</head>
+<body>
+
+    <div class="main-body__form">
+        <form action="/" method="POST">
+            <label for="url" class="main-body__title">Lütfen Qr Oluşturmak İstediğiniz Linki Giriniz :</label>
+            <input type="url" id="url" name="url" class="main-body__form_input" required>
+            <input type="submit" class="main-body__form_submit">
+        </form>
+        
+    </div>
+    {% if img_url %}
+    <div class="main-body__qr">
+        <h3>QR Kodunuz:</h3>
+        <img src="{{ url_for('qr_image', url=request.form.get('url')) }}" alt="QR Kod" class="qr-img">
+        <br>
+        <br>
+        <a href="{{ url_for('qr_image', url=request.form.get('url')) }}" download="qr_code.png" class="qr-btn">QR Kodunu İndir</a>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

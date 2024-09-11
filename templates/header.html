@@ -1,0 +1,34 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block styles %}
+    <!-- Load Bootstrap-Flask CSS here -->
+    {{ bootstrap.load_css() }}
+    {% endblock %}
+    <style>
+        * {box-sizing: border-box;}
+        body {background-color: #48CFCB; margin: 0; padding: 0;}
+        .main-header {width: 100%;}
+        .main-header a {font-size: 24px; color: #F5F5F5; padding: 5px 10px; transition-duration: .6s; border-radius: 5px;}
+        .main-header a:hover {background-color: #F5F5F5; color: #229799;}
+        .main-header a:active {background-color: #F5F5F5; color: #424242;}
+        .main-header__logo {text-decoration: none; display: inline-block;}
+        .main-navbar {float: right;}
+        .main-navbar__item {display: inline-block; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <a href="{{ url_for('main')}}" class="main-header__logo"> Ana Sayfa</a>
+        <nav class="main-navbar">
+            
+            <a href="{{ url_for('contact')}}" class="main-navbar__item">İletişim</a>
+        </nav>
+    </header>
+</body>
+</html>
+{% endblock %}
